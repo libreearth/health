@@ -15,6 +15,7 @@ defmodule HealthWeb.EvaluationController do
   end
 
   def create(conn, %{"evaluation" => evaluation_params}) do
+    IO.inspect evaluation_params
     case Evaluations.create_evaluation(evaluation_params) do
       {:ok, evaluation} ->
         conn

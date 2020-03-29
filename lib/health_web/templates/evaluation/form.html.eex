@@ -14,12 +14,17 @@
   <%= error_tag f, :date_of_birth %>
 
   <%= label f, :h3id %>
-  <%= text_input f, :h3id %>
+  <%= text_input f, :h3id%>
   <%= error_tag f, :h3id %>
 
-  <%= label f, :happiness %>
-  <%= number_input f, :happiness %>
+  <%= label f, "How are you feeling today?" %>
   <%= error_tag f, :happiness %>
+  <input type="checkbox" name="evaluation[happiness]" value=5>Happy<br>      
+  <input type="checkbox" name="evaluation[happiness]" value=1>Sad<br>      
+  <input type="checkbox" name="evaluation[happiness]" value=2>Depressed<br>
+  <input type="checkbox" name="evaluation[happiness" value=3>Tired<br>    
+  <input type="checkbox" name="evaluation[happiness]" value=4>Lonely<br>  
+  <input type="checkbox" name="evaluation[happiness]" value=0>Angry<br>    
 
   <%= label f, :smoker %>
   <%= number_input f, :smoker %>
@@ -29,13 +34,33 @@
   <%= number_input f, :alcohol %>
   <%= error_tag f, :alcohol %>
 
-  <%= label f, :symptoms %>
-  <%= number_input f, :symptoms %>
   <%= error_tag f, :symptoms %>
+  <legend>Any current symptoms?</legend>      
+  <input type="checkbox" name="evaluation[symptoms]" value="Fever">Fever<br>      
+  <input type="checkbox" name="evaluation[symptoms]" value="Tiredness">Tiredness<br>      
+  <input type="checkbox" name="evaluation[symptoms]" value="Dry cough">Dry cough<br>
+  <input type="checkbox" name="evaluation[symptoms]" value="Sore throat">Sore throat<br>    
+  <input type="checkbox" name="evaluation[symptoms]" value="Diarrhea">Diarrhea<br>    
+  <input type="checkbox" name="evaluation[symptoms]" value="Nausea">Nausea<br>    
+  <input type="checkbox" name="evaluation[symptoms]" value="Runny nose">Runny nose<br>        
+  <input type="checkbox" name="evaluation[symptoms]" value="Cough">Cough<br>  
+  <input type="checkbox" name="evaluation[symptoms]" value="Shortness of breath">Shortness of breath<br>  
+  <input type="checkbox" name="evaluation[symptoms]" value="Trouble breathing">Trouble breathing<br>  
+  <input type="checkbox" name="evaluation[symptoms]" value="Persistent Pain or pressure in chest">Persistent Pain or pressure in chest<br>  
+  <input type="checkbox" name="evaluation[symptoms]" value="New confusion or inability to arouse">New confusion or inability to arouse<br>  
+  <input type="checkbox" name="evaluation[symptoms]" value="Bluish lips of face">Bluish lips of face<br>  
 
-  <%= label f, :previous_conditions %>
-  <%= number_input f, :previous_conditions %>
   <%= error_tag f, :previous_conditions %>
+  <legend>Do you have any existing conditions?:</legend>      
+  <input type="checkbox" name="evaluation[previous_conditions]" value="Cardiac disease">Cardiac disease<br>      
+  <input type="checkbox" name="evaluation[previous_conditions]" value="Hypertension">Hypertension<br>      
+  <input type="checkbox" name="evaluation[previous_conditions]" value="Lung disease such as asthma, pneumonia">Lung disease such as asthma, pneumonia<br>
+  <input type="checkbox" name="evaluation[previous_conditions]" value="Diabetes">Diabetes<br>    
+  <input type="checkbox" name="evaluation[previous_conditions]" value="Haemoglobinopathies">Haemoglobinopathies<br>    
+  <input type="checkbox" name="evaluation[previous_conditions]" value="Liver disease">Liver disease<br>    
+  <input type="checkbox" name="evaluation[previous_conditions]" value="Neurological disorder">Neurological disorder<br>        
+  <input type="checkbox" name="evaluation[previous_conditions]" value="Obesity">Obesity<br>  
+  <input type="checkbox" name="evaluation[previous_conditions]" value="SRenal disease">Renal disease<br>  
 
   <%= label f, :previous_contact_with_sick %>
   <%= number_input f, :previous_contact_with_sick %>
