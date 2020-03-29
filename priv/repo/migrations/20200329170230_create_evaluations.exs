@@ -15,6 +15,7 @@ defmodule Health.Repo.Migrations.CreateEvaluations do
       add :travel_to_risk, :integer
       add :do_you_work, :integer
       add :taking_precautions, :integer
+      add :household_number, :integer
       add :sports, :integer
 
       timestamps()

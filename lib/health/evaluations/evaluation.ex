@@ -15,6 +15,7 @@ defmodule Health.Evaluations.Evaluation do
     field :symptoms, :integer
     field :taking_precautions, :integer
     field :travel_to_risk, :integer
+    field :household_number, :integer
     field :uuid, :string
 
     timestamps()
@@ -26,7 +27,7 @@ defmodule Health.Evaluations.Evaluation do
     |> attrs_previous_conditions()
 
     evaluation
-    |> cast(attrs, [:uuid, :date_of_birth, :h3id, :happiness, :smoker, :alcohol, :symptoms, :previous_conditions, :previous_contact_with_sick, :travel_to_risk, :do_you_work, :taking_precautions, :sports])
+    |> cast(attrs, [:uuid, :date_of_birth, :h3id, :happiness, :smoker, :alcohol, :symptoms, :previous_conditions, :previous_contact_with_sick, :travel_to_risk, :do_you_work, :taking_precautions, :household_number, :sports])
 
     #|> validate_required([:uuid, :date_of_birth, :h3id, :happiness, :smoker, :alcohol, :symptoms, :previous_conditions, :previous_contact_with_sick, :travel_to_risk, :do_you_work, :taking_precautions, :sports])
   end

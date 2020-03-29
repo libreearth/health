@@ -5,17 +5,15 @@
     </div>
   <% end %>
 
-  <%= label f, :uuid %>
+  <!--<%= label f, :uuid %>
   <%= text_input f, :uuid %>
-  <%= error_tag f, :uuid %>
+  <%= error_tag f, :uuid %>-->
 
   <%= label f, :date_of_birth %>
   <%= date_select f, :date_of_birth %>
   <%= error_tag f, :date_of_birth %>
 
-  <%= label f, :h3id %>
-  <%= text_input f, :h3id%>
-  <%= error_tag f, :h3id %>
+  <%= text_input f, :h3id, [hidden: true]%>
 
   <%= label f, "How are you feeling today?" %>
   <%= error_tag f, :happiness %>
@@ -26,12 +24,12 @@
   <input type="checkbox" name="evaluation[happiness]" value=4>Lonely<br>  
   <input type="checkbox" name="evaluation[happiness]" value=0>Angry<br>    
 
-  <%= label f, :smoker %>
-  <%= number_input f, :smoker %>
+  <%= label f, "Do you smoke?" %>
+  <%= checkbox f, :smoker, [checked_value: 1, unchecked_value: 0]%>
   <%= error_tag f, :smoker %>
 
-  <%= label f, :alcohol %>
-  <%= number_input f, :alcohol %>
+  <%= label f, "Do you drink alcohol?" %>
+  <%= checkbox f, :alcohol, [checked_value: 1, unchecked_value: 0]%>
   <%= error_tag f, :alcohol %>
 
   <%= error_tag f, :symptoms %>
@@ -62,24 +60,28 @@
   <input type="checkbox" name="evaluation[previous_conditions]" value="Obesity">Obesity<br>  
   <input type="checkbox" name="evaluation[previous_conditions]" value="SRenal disease">Renal disease<br>  
 
-  <%= label f, :previous_contact_with_sick %>
-  <%= number_input f, :previous_contact_with_sick %>
+  <%= label f, "Have you been in contact in the past 3 weeks with someone who was sick with any of those symptoms?" %>
+  <%= checkbox f, :previous_contact_with_sick, [checked_value: 1, unchecked_value: 0]%>
   <%= error_tag f, :previous_contact_with_sick %>
 
-  <%= label f, :travel_to_risk %>
-  <%= number_input f, :travel_to_risk %>
+  <%= label f, "Have you travelled to any of those countries in the last month (China, Italy, USA, France, Spain, Singapore, South Korea, Japan. Continent EU, America, Africa, Asia, Australasia)" %>
+  <%= checkbox f, :travel_to_risk, [checked_value: 1, unchecked_value: 0]%>
   <%= error_tag f, :travel_to_risk %>
 
-  <%= label f, :do_you_work %>
-  <%= number_input f, :do_you_work %>
+  <%= label f, "Do you work?" %>
+  <%= checkbox f, :do_you_work, [checked_value: 1, unchecked_value: 0]%>
   <%= error_tag f, :do_you_work %>
 
-  <%= label f, :taking_precautions %>
+  <%= label f, "Are you doing any of the following regularly ? (Keeping a distance of 2 mètres with people, washing hands regularly, covering your nose with mask, showering after going outside)" %>
   <%= number_input f, :taking_precautions %>
   <%= error_tag f, :taking_precautions %>
 
-  <%= label f, :sports %>
-  <%= number_input f, :sports %>
+  <%= label f, "How many people live in your house?" %>
+  <%= number_input f, :household_number%>
+  <%= error_tag f, :household_number %>
+
+  <%= label f, "Do you do Sports?" %>
+  <%= checkbox f, :sports, [checked_value: 1, unchecked_value: 0]%>
   <%= error_tag f, :sports %>
 
   <div>
