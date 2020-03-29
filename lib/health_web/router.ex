@@ -17,6 +17,7 @@ defmodule HealthWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    resources "/evaluations", EvaluationController
   end
 
   # Other scopes may use custom stacks.

@@ -1,0 +1,73 @@
+<h1>Show Evaluation</h1>
+
+<ul>
+
+  <li>
+    <strong>Uuid:</strong>
+    <%= @evaluation.uuid %>
+  </li>
+
+  <li>
+    <strong>Date of birth:</strong>
+    <%= @evaluation.date_of_birth %>
+  </li>
+
+  <li>
+    <strong>H3id:</strong>
+    <%= @evaluation.h3id %>
+  </li>
+
+  <li>
+    <strong>Happiness:</strong>
+    <%= @evaluation.happiness %>
+  </li>
+
+  <li>
+    <strong>Smoker:</strong>
+    <%= @evaluation.smoker %>
+  </li>
+
+  <li>
+    <strong>Alcohol:</strong>
+    <%= @evaluation.alcohol %>
+  </li>
+
+  <li>
+    <strong>Symptoms:</strong>
+    <%= @evaluation.symptoms %>
+  </li>
+
+  <li>
+    <strong>Previous conditions:</strong>
+    <%= @evaluation.previous_conditions %>
+  </li>
+
+  <li>
+    <strong>Previous contact with sick:</strong>
+    <%= @evaluation.previous_contact_with_sick %>
+  </li>
+
+  <li>
+    <strong>Travel to risk:</strong>
+    <%= @evaluation.travel_to_risk %>
+  </li>
+
+  <li>
+    <strong>Do you work:</strong>
+    <%= @evaluation.do_you_work %>
+  </li>
+
+  <li>
+    <strong>Taking precautions:</strong>
+    <%= @evaluation.taking_precautions %>
+  </li>
+
+  <li>
+    <strong>Sports:</strong>
+    <%= @evaluation.sports %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.evaluation_path(@conn, :edit, @evaluation) %></span>
+<span><%= link "Back", to: Routes.evaluation_path(@conn, :index) %></span>

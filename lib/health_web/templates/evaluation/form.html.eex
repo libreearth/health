@@ -1,0 +1,63 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <%= label f, :uuid %>
+  <%= text_input f, :uuid %>
+  <%= error_tag f, :uuid %>
+
+  <%= label f, :date_of_birth %>
+  <%= date_select f, :date_of_birth %>
+  <%= error_tag f, :date_of_birth %>
+
+  <%= label f, :h3id %>
+  <%= text_input f, :h3id %>
+  <%= error_tag f, :h3id %>
+
+  <%= label f, :happiness %>
+  <%= number_input f, :happiness %>
+  <%= error_tag f, :happiness %>
+
+  <%= label f, :smoker %>
+  <%= number_input f, :smoker %>
+  <%= error_tag f, :smoker %>
+
+  <%= label f, :alcohol %>
+  <%= number_input f, :alcohol %>
+  <%= error_tag f, :alcohol %>
+
+  <%= label f, :symptoms %>
+  <%= number_input f, :symptoms %>
+  <%= error_tag f, :symptoms %>
+
+  <%= label f, :previous_conditions %>
+  <%= number_input f, :previous_conditions %>
+  <%= error_tag f, :previous_conditions %>
+
+  <%= label f, :previous_contact_with_sick %>
+  <%= number_input f, :previous_contact_with_sick %>
+  <%= error_tag f, :previous_contact_with_sick %>
+
+  <%= label f, :travel_to_risk %>
+  <%= number_input f, :travel_to_risk %>
+  <%= error_tag f, :travel_to_risk %>
+
+  <%= label f, :do_you_work %>
+  <%= number_input f, :do_you_work %>
+  <%= error_tag f, :do_you_work %>
+
+  <%= label f, :taking_precautions %>
+  <%= number_input f, :taking_precautions %>
+  <%= error_tag f, :taking_precautions %>
+
+  <%= label f, :sports %>
+  <%= number_input f, :sports %>
+  <%= error_tag f, :sports %>
+
+  <div>
+    <%= submit "Save" %>
+  </div>
+<% end %>
