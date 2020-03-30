@@ -6,6 +6,8 @@
     "watch": "webpack --mode development --watch"
   },
   "dependencies": {
+    "geojson2h3": "^1.0.1",
+    "ol": "^6.2.1",
     "phoenix": "file:../deps/phoenix",
     "phoenix_html": "file:../deps/phoenix_html"
   },

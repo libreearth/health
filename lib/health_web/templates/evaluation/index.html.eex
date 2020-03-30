@@ -1,50 +1,17 @@
-<h1>Listing Evaluations</h1>
+<div>
+  <div id="map" class="full-map"></div>
+</div>
+<script>
+  window.addEventListener('load', (event) => {
+    window.init_map([<%= for {agg,index} <- Enum.with_index(@aggregations) do %> 
+    <%= if index>0 do %>,<% end %>{hexagon: "<%= agg.hexagon %>", value: <%= agg.value %>} 
+    <%end %>]);
+  });
+</script>
+<style>
+#map {
+    width: 400px;
+    height: 300px;
+}
+</style>
 
-<table>
-  <thead>
-    <tr>
-      <th>Uuid</th>
-      <th>Date of birth</th>
-      <th>H3id</th>
-      <th>Happiness</th>
-      <th>Smoker</th>
-      <th>Alcohol</th>
-      <th>Symptoms</th>
-      <th>Previous conditions</th>
-      <th>Previous contact with sick</th>
-      <th>Travel to risk</th>
-      <th>Do you work</th>
-      <th>Taking precautions</th>
-      <th>Sports</th>
-
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for evaluation <- @evaluations do %>
-    <tr>
-      <td><%= evaluation.uuid %></td>
-      <td><%= evaluation.date_of_birth %></td>
-      <td><%= evaluation.h3id %></td>
-      <td><%= evaluation.happiness %></td>
-      <td><%= evaluation.smoker %></td>
-      <td><%= evaluation.alcohol %></td>
-      <td><%= evaluation.symptoms %></td>
-      <td><%= evaluation.previous_conditions %></td>
-      <td><%= evaluation.previous_contact_with_sick %></td>
-      <td><%= evaluation.travel_to_risk %></td>
-      <td><%= evaluation.do_you_work %></td>
-      <td><%= evaluation.taking_precautions %></td>
-      <td><%= evaluation.sports %></td>
-
-      <td>
-        <span><%= link "Show", to: Routes.evaluation_path(@conn, :show, evaluation) %></span>
-        <span><%= link "Edit", to: Routes.evaluation_path(@conn, :edit, evaluation) %></span>
-        <span><%= link "Delete", to: Routes.evaluation_path(@conn, :delete, evaluation), method: :delete, data: [confirm: "Are you sure?"] %></span>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
-
-<span><%= link "New Evaluation", to: Routes.evaluation_path(@conn, :new) %></span>

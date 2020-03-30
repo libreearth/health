@@ -21,6 +21,24 @@ defmodule Health.Evaluations do
     Repo.all(Evaluation)
   end
 
+  def list_aggregations("mean_happiness") do
+    evals = Repo.all(Evaluation)
+
+    evals
+    |> Enum.map( fn x -> x.h3id end )
+    |> Enum.map(fn h3id -> %{hexagon: h3id, value: mean_happiness(evals, h3id)} end)
+  end
+
+  defp mean_happiness(all_evals, h3id) do
+    evals = Enum.filter(all_evals, fn x -> x.h3id == h3id end)
+    Enum.map(evals, fn x -> x.happiness end)
+    |> mean()
+  end
+
+  defp mean(vals) do
+    Enum.sum(vals)/Enum.count(vals)
+  end
+
   @doc """
   Gets a single evaluation.
 

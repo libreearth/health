@@ -4,11 +4,12 @@ defmodule HealthWeb.EvaluationController do
   alias Health.Evaluations
   alias Health.Evaluations.Evaluation
 
-  def index(conn, _params) do
-    evaluations = Evaluations.list_evaluations()
-    render(conn, "index.html", evaluations: evaluations)
+  def index(conn, %{"query" => query}) do
+    aggregations = Evaluations.list_aggregations(query)
+    render(conn, "index.html", aggregations: aggregations)
   end
 
+  @spec new(Plug.Conn.t(), any) :: Plug.Conn.t()
   def new(conn, _params) do
     changeset = Evaluations.change_evaluation(%Evaluation{})
     render(conn, "new.html", changeset: changeset)

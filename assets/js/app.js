@@ -10,5 +10,7 @@ import css from "../css/app.css"
 // Import dependencies
 //
 import "phoenix_html"
+import 'ol/ol.css'
+import {init_map} from "./evaluations_map"
 
-import "./hello"
+window.init_map = init_map
