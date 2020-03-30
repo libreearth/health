@@ -30,9 +30,10 @@ defmodule Health.Evaluations do
   end
 
   defp mean_happiness(all_evals, h3id) do
-    evals = Enum.filter(all_evals, fn x -> x.h3id == h3id end)
-    Enum.map(evals, fn x -> x.happiness end)
-    |> mean()
+      Enum.filter(all_evals, fn x -> x.h3id == h3id end)
+      |> Enum.filter(fn x -> x.happiness != nil end)
+      |> Enum.map( fn x -> x.happiness end)
+      |> mean()
   end
 
   defp mean(vals) do
